@@ -1,181 +1,451 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-   
-    <meta charset="UTF-8">
-    <title>Le Wagon - Web Development Sprint</title>
+html,
 
-    
-    <link href="https://fonts.googleapis.com/css?family=Chivo:700|Overpass:400,700&display=swap" rel="stylesheet">
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+}
 
-   
-    <link rel="stylesheet" href="style.css">
-    
-  </head>
-  <body>
-    <nav role="navigation" class="position-relative main-navbar navbar navbar-expand-lg d-flex justify-content-between align-items-center flex-wrap">
-      <a class="navbar-brand" href="https://www.lewagon.com/fr"><img alt="Le WAGON Accueil" src="https://www.lewagon.com/assets/v4/logo-lewagon-9c19fb39a748cd3b1f49059ce0dc6c0dfc4cc2447d5a9a3e01bd2d5a214faf3c.svg"></a>
-      <button class="menu-burger d-block d--lg--none pr-1">
-      <span class="sr-only"> Ouvrir le menu </span>
-      <svg focusable="false" aria-hidden="true" width="27" height="13" viewBox="0 0 27 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M27 0H0V2H27V0Z" fill="black"></path>
-      <path d="M27 5.5H0V7.5H27V5.5Z" fill="black"></path>
-      <path d="M27 11H0V13H27V11Z" fill="black"></path>
-      </svg>
-      </button>
-      <div class="close--btn--menu d--lg--none">
-      <button type="button" class="ml-lg-2 close close--menu-nav" data-dismiss="close-menu">
-      <span class="sr-only"> Fermer le menu </span>
-        <svg aria-hidden="true" focusable="false" width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g transform="translate(-5.000000, -5.000000)" fill="#2E3A59" fill-rule="nonzero">
-                    <g>
-                        <path d="M17.5900002,5 L12,10.5900002 L6.40999997,5 L5,6.40999997 L10.5900002,12 L5,17.5900002 L6.40999997,19 L12,13.4099998 L17.5900002,19 L19,17.5900002 L13.4099998,12 L19,6.40999997 L17.5900002,5 Z"></path>
-                    </g>
-                </g>
-            </g>
-        </svg>
-      </button>
-      </div>
-      <div class="collapsed dropdown-container dropdown-container-slidemorph">
-        <ul id="menu-navigation-fr" class="navbar-nav dropdown--menu position-relative"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-2409" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-2409 nav-item nav-item"><button title="Ne loupe pas le train" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link" id="menu-item-dropdown-2409">Ne loupe pas le train</button>
-<ul class="dropdown-menu">
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-0" class="previous-menu-btn menu-item menu-item-type-custom menu-item-object-custom menu-item-type-button menu-item-0 nav-item nav-item"><button class="go--back" type="button">Menu</button></li>
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137 nav-item nav-item"><a title="Le campus"  class="nav-link">Formation</a></li>
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129 nav-item nav-item"><a title="Vie étudiante"  class="nav-link">Campus</a></li>
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1265" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1265 nav-item nav-item"><a title="Formation proposée" class="nav-link">Nos Alumnis</a></li>
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-128" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-128 nav-item nav-item"><a title="Bientôt à 42" class="nav-link">Offre entreprise</a></li>
+a {
+    color: rgb(255 94 102);
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
 
-</ul>
-</li>
+a:hover,
+a:focus {
+    color: rgb(234, 195, 240);
+}
 
-         </div>
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    text-align: center;
+    color: #fff;
+    background-image: url('../images/background.jpg');
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+header .header-content {
+    position: relative;
+    width: 100%;
+    padding: 100px 15px 70px;
+    text-align: center;
+}
+
+header .header-content .header-content-inner h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-weight: 300;
+}
+
+header .header-content .header-content-inner p {
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,.7);
+}
+.card {
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    /*width: 200px;*/
+    text-align: center;
+    padding: 24px;
+    flex-grow: 1;
+  }
+
+  .card img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .card h3 {
+    margin-bottom: 0;
+  }
+
+@media(min-width:768px) {
+    header {
+        min-height: 100%;
+    }
+
+    header .header-content {
+        position: absolute;
+        top: 50%;
+        padding: 0 50px;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    header .header-content .header-content-inner {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1000px;
+    }
+
+	header .header-content .header-content-inner h1 {
+    	font-size: 100px;
+		}
+
+    header .header-content .header-content-inner p {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 80%;
+        font-size: 18px;
+    }
+}
+
+.section-heading {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.intro {
+	color: #fff;
+    background-color: #051e88;
+    padding: 70px 0;
+    text-align: center;
+}
+
+.content {
+    padding: 100px 0;
+}
+
+.content-2 {
+	color: #fff;
+    background-color: #c70000;
+}
+
+.content-3 {
+	padding: 20px 0 40px;
+	text-align: center;
+}
+
+.promo,
+.promo h3,
+.promo a:link,
+.promo a:visited,
+.promo a:hover,
+.promo a:active {
+    color: white;
+	text-shadow: 0px 0px 40px black;
+    text-decoration: none;
+}
+
+.promo-item {
+    height: 200px;
+    line-height: 180px;
+    text-align: center;
+}
+
+.promo-item:hover {
+    background-size: 110%; 
+    border: 10px solid rgb(58 58 58 / 30%);
+    line-height: 160px;
+}
+
+.promo-item h3 {
+    font-size: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.item-1 {
+	background: url('../images/writing.jpg');
+	}
+	
+.item-2 {
+	background: url('https://s2.qwant.com/thumbr/474x266/c/c/5592450bbc26c7e056b9854f9e8368302dedaa8b0bdedd0ea2933e3d2762af/th.jpg?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.eHDT_xg3fUONKnlwzmhzxQHaEK%26pid%3DApi&q=0&b=1&p=0&a=0');
+	}
+	
+.item-3 {
+	background: url('https://s2.qwant.com/thumbr/0x380/6/9/c6d8b78066d725b6213f81758b4f0f4caa5feee1fa70d6ab3977a7f4a1cfa3/INTRO-1.jpg?u=https%3A%2F%2Fwww.axeinfo.fr%2Fwp-content%2Fuploads%2F2021%2F06%2FINTRO-1.jpg&q=0&b=1&p=0&a=0');
+	}
+		
+.item-1,
+.item-2,
+.item-3 {
+	background-size: cover;
+	background-position: 50% 50%;
+	}
+
+.page-footer {
+	text-align: center;
+	}
+
+.page-footer .contact {
+	padding: 100px 0;
+	background-color: #010101;
+	color: #fff;
+	}
+
+.page-footer .contact p {
+	font-size: 22px;
+	font-weight: 300;
+	}
+	
+.content-3 .glyphicon,	
+.page-footer .contact .glyphicon {
+	font-size: 32px;
+	font-weight: 700;
+	}
+		
+.page-footer .small-print {
+	padding: 50px 0 40px;
+	font-weight: 300;
+	}
+
+.text-light {
+    color: rgba(255,255,255,.7);
+}
+
+.navbar-default {
+    border-color: rgba(34,34,34,.05);
+    background-color: #fff;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.navbar-default .navbar-header .navbar-brand {
+    color: #493d3d;
+}
+
+.navbar-default .navbar-header .navbar-brand:hover,
+.navbar-default .navbar-header .navbar-brand:focus {
+    color: #ec0000;
+}
+
+.navbar-default .nav > li>a,
+.navbar-default .nav>li>a:focus {
+    color: #f00;
+}
+
+.navbar-default .nav > li>a:hover,
+.navbar-default .nav>li>a:focus:hover {
+    color: #dcc6c6;
+}
+
+.navbar-default .nav > li.active>a,
+.navbar-default .nav>li.active>a:focus {
+    color: #ff4242!important;
+    background-color: transparent;
+}
+
+.navbar-default .nav > li.active>a:hover,
+.navbar-default .nav>li.active>a:focus:hover {
+    background-color: #001ef900;
+}
+
+@media(min-width:768px) {
+    .navbar-default {
+        border-color: rgba(255,255,255,.3);
+        background-color: #ff000000;
+    }
+
+    .navbar-default .navbar-header .navbar-brand {
+        color: rgba(255,255,255,.7);
+        letter-spacing: 0.5em;
+    }
+
+    .navbar-default .navbar-header .navbar-brand:hover,
+    .navbar-default .navbar-header .navbar-brand:focus {
+        color: #2142ba;
+    }
+
+    .navbar-default .nav > li>a,
+    .navbar-default .nav>li>a:focus {
+        color: rgb(255 6 6);
+    }
+
+    .navbar-default .nav > li>a:hover,
+    .navbar-default .nav>li>a:focus:hover {
+        color: #b004ff;
+    }
+
+    .navbar-default.affix {
+        border-color: #fff;
+        background-color: #fff;
+        box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.1);
+    }
+
+    .navbar-default.affix .navbar-header .navbar-brand {
+        letter-spacing: 0;
+        color: #cc1e1e;
+    }
+
+    .navbar-default.affix .navbar-header .navbar-brand:hover,
+    .navbar-default.affix .navbar-header .navbar-brand:focus {
+        color: #eb3812;
+    }
+
+    .navbar-default.affix .nav > li>a,
+    .navbar-default.affix .nav>li>a:focus {
+        color: #222;
+    }
+
+    .navbar-default.affix .nav > li>a:hover,
+    .navbar-default.affix .nav>li>a:focus:hover {
+        color: rgb(205, 50, 50);
+    }
+}
+
+.btn-default {
+    border-color: #000000;
+    color: #ffffff;
+    background-color: #000;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    border-color: #572323;
+    color: #222;
+    background-color: #eee;
+}
+
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    background-image: none;
+}
+
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+    border-color: #fff;
+    background-color: #fff;
+}
+
+.btn-default .badge {
+    color: #324c67;
+    background-color: #222;
+}
+
+.btn-primary {
+    border-color: #ffffff;
+    color: #fff;
+    background-color: black;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    border-color: limegreen;
+    color: #fff;
+    background-color: #3c763d;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    background-image: none;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+    border-color: #f200ff;
+    background-color: yellowgreen;
+}
+
+.btn-primary .badge {
+    color: yellowgreen;
+    background-color: #fff;
+}
 
 
-</ul></div>              </nav>
-  
-    <div class="banner">
-      <h1>Apprendre le code !</h1>
-      <h1>Casse les codes.</h1>
-      <p>Accélérez votre carrière, formez-vous aux métiers de la Tech</p>
-      <a href="https://www.lewagon.com/" class="btn">Rejooins le sannng.. 😉</a>
-    </div>
-    <p data-aos="fade-up" data-aos-delay="100" class="text-white body--sm text-center px-0 px-sm-3 aos-init aos-animate">
-      Le Wagon, c’est une formation en informatique d’excellence pour tous et toutes. Au programme de cette formation différente et innovante : une approche par projets pour progresser et développer des compétences techniques et humaines recherchées sur le marché du travail.
-</p>
-   
-    <div class="container">
-      <h2>Nos différents campus à travers le monde</h2>
-     
-      <div class="cards">
+.btn {
+    border-radius: 300px;
+    text-transform: uppercase;
+}
 
-        
-        <div class="card">
-          <img src="images/chinedr.webp" alt="">
-          <h3>Shanghai</h3>
-        </div>
+.btn-lg {
+    padding: 15px 30px;
+}
 
-        
-        <div class="card">
-          <img src="images/drapen.webp" alt="">
-          <h3>London</h3>
-        </div>
+::-moz-selection {
+    text-shadow: none;
+    color: #fff;
+    background: #de4545;
+}
 
-        
-        <div class="card">
-          <img src="images/drapfr.webp" alt="">
-          <h3>Paris</h3>
-        </div>
-      </div>
-    </div>
+::selection {
+    text-shadow: none;
+    color: #fff;
+    background: #222;
+}
 
-    
-    <div class="footer">
-      <footer class="py-80 bg-secondary-dark">
-        <div class="container text-white">
-          <div class="row pb-64 mb-32 border-bottom border-white">
-            <div class="col-6 col-lg-2 ps-md-0 mb-48">
-                <p class="fw-bold text-uppercase mb-16">A propos</p>
-    
-                <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" href="/fr/faq">FAQ</a>
-    
-                <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" href="/fr/about-us">À propos du Wagon</a>
-    
-              <!-- TODO(sarahlafer): Add the right link for the press coverage -->
-                <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" href="/fr/press">Presse</a>
-    
-                <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" target="_blank" href="https://www.welcometothejungle.com/en/companies/le-wagon/jobs">Rejoignez-nous</a>
-    
-                <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" href="/fr/contact">Nous contacter</a>
-    
-                <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" target="_blank" href="https://www.iubenda.com/privacy-policy/36129447/legal">Politique de confidentialité</a>
-    
-                <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" href="/fr/legal-notice">Mentions légales</a>
-    
-            </div>
-            <div class="col-6 col-lg-3 mb-48">
-                <p class="fw-bold text-uppercase mb-16">Ressources</p>
-    
-                <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" href="/fr/blog">Blog</a>
-    
-                <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" href="/fr/webinars">Ateliers gratuits</a>
-    
-                <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" href="/fr/career-services">Service carrières</a>
-    
-                    <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" href="/fr/metiers-tech/developpement-web">Les carrières dans le Développement Web</a>
-    
-                    <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" href="/fr/metiers-tech/data-science">Les carrières en Data Science</a>
-    
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-48">
-                <p class="fw-bold text-uppercase mb-16">Entreprises</p>
-    
-                <a default="default" target="blank" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" href="https://business.lewagon.com/">Le Wagon For Business</a>
-    
-                <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" href="/fr/hirings">Partenaires recruteurs</a>
-    
-                <a default="default" class="fw-400 mb-16 text-white text-decoration-none footer-link small d-block" href="/fr/universities">Universités</a>
-    
-            </div>
-            <div class="col-sm-6 col-lg-4 pe-md-0">
-                <p class="fw-bold text-uppercase mb-16">S'ABONNER À notre newsletter</p>
-    
-                <p class="fw-400 mb-16 fs-14">Ne ratez aucun événement gratuit du Wagon et soyez au courant des dernières actualités liées à la tech, aux startups et à l'innovation.</p>
-    
-              <div class="row mt-16">
-                <div class="col-xl-4">
-                  <button name="button" type="submit" class="btn btn-primary btn-small btn-white-arrow fw-bold" data-bs-toggle="modal" data-bs-target="#newsletter">S'abonner</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row justify-content-between">
-            <div class="col-md-5 ps-md-0 order-md-1">
-              <div class="d-flex justify-content-md-end mb-32 mb-md-0">
-                  <a class="me-24" target="_blank" href="https://www.linkedin.com/school/le-wagon/">
-                    <img width="25" height="25" class="img-fluid" loading="lazy" src="/assets/v4/linkedin-logo-8b6608f432e28b80ee3122f6a45939acd7deacc7327b740656aadaecd01fd93e.svg">
-    </a>              <a class="me-24" target="_blank" href="https://www.facebook.com/lewagon">
-                    <img width="25" height="25" class="img-fluid" loading="lazy" src="/assets/v4/facebook-logo-1b521b4a9e2395f199c6ba97253676ace3d0399df2cc009a41bce3209668f2d5.svg">
-    </a>              <a class="me-24" target="_blank" href="https://www.youtube.com/c/lewagon">
-                    <img width="25" height="25" class="img-fluid" loading="lazy" src="/assets/v4/youtube-logo-4a92d8d8fcbab40dd9dd117793dc2831d7da4fbdcdb2c421ad5ba57734ed569a.svg">
-    </a>              <a class="me-24" target="_blank" href="https://www.meetup.com/pro/lewagon">
-                    <img width="25" height="25" class="img-fluid" loading="lazy" src="/assets/v4/meetup-logo-3418d14f8c38a841e8084159ac504261b9c46cbe14d3114d8d66860d9703f864.svg">
-    </a>              <a class="me-24" target="_blank" href="https://www.github.com/lewagon">
-                    <img width="25" height="25" class="img-fluid" loading="lazy" src="/assets/v4/github-logo-660468b7a26b199e1952d9e16b13c3d9562803d164f3a6aef2565dc5c7beaaa9.svg">
-    </a>          </div>
-            </div>
-            <div class="col-md-5 pe-md-0 oder-md-2">
-                <p class="fw-400">© 2022. Tous droits réservés.</p>
-    
-            </div>
-          </div>
-        </div>
-      </footer>
-      <div class="container">
-        <p>Website fait avec ❤️ par Arthurito</p>
-      </div>
-    </div>
+img::selection {
+    color: #fff;
+    background: 0 0;
+}
 
-  </body>
-</html>
+img::-moz-selection {
+    color: #fff;
+    background: 0 0;
+}
 
+.text-primary {
+    color: yellowgreen;
+}
+
+.bg-primary {
+    background-color: yellowgreen;
+}
